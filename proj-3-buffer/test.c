@@ -52,7 +52,8 @@ void *producer(void *arg)
 	char *data = (char*)malloc(sizeof(char)*DATA_LENGTH);
 	int p = 0;
 	
-	//More random seeding method - source: guyrutenberg.com/2007/09/03/seeding-srand/ - Using current time can result in same seed if threads run fast enough that system time doesn't technically change
+	//More random seeding method - source: guyrutenberg.com/2007/09/03/seeding-srand/ - Using current time can result in same seed if threads run fast enough that system 
+	//time doesn't technically change
 	struct timeval t1;
 	gettimeofday(&t1, NULL); //Get current time of day
 	srand(t1.tv_usec * t1.tv_sec); //Multiply current microseconds by seconds, use this value to seed 
@@ -98,7 +99,8 @@ void *consumer(void *arg)
 	arg = arg;
 	char *data = (char*)malloc(sizeof(char)*DATA_LENGTH);
 	
-	//More random seeding method - source: guyrutenberg.com/2007/09/03/seeding-srand/ --> Using current time can result in same seed if threads run fast enough that system time doesn't technically change
+	//More random seeding method - source: guyrutenberg.com/2007/09/03/seeding-srand/ - Using current time can result in same seed if threads run fast enough that system 
+	//time doesn't technically change
 	struct timeval t1;
 	gettimeofday(&t1, NULL); //Get current time of day
 	srand(t1.tv_usec * t1.tv_sec); //Multiply current microseconds by seconds, use this value to seed 
